@@ -29,13 +29,15 @@ const ToDoList = () => {
     <div>
       <input onChange={handleChange} type="text" />
       <button onClick={handleAddMethod}>Add To Do</button>
-        {currentList.map(({id,task}) => (
+        {
+         currentList.length>0? currentList.map(({id,task}) => (
           <div>
           <TodoItem task= {task}/>
           <button onClick={() => deleteHandler(id)}>Delete</button>
           </div>
           
-        ))}
+        )):<h1>Task Yoxdur</h1>
+        }
     </div>
   );
 };
