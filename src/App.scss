@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  .container{
+
+    p {
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+    margin: 0 auto;
+    background-color: black;
+    color: red;
+    margin-bottom: 10px;
+  }
+  .todolist {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .item {
+      margin-top: 20px;
+
+      .todo {
+        background-color: aquamarine;
+        border: 2px solid black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+          width: 30%;
+          height: 60%;
+          margin: 5px;
+        }
+      }
+    }
+  }
+  }
+  
+}

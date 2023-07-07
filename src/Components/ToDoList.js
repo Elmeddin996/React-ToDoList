@@ -1,6 +1,6 @@
 import React from 'react';
 import TodoItem from './TodoItem';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 const ToDoList = () => {
   
   const [arr,setArray] = React.useState([])
@@ -26,19 +26,28 @@ const ToDoList = () => {
     setCurrentList( currentList.filter(x => x.id !== id))
   }
   return (
-    <div>
-      <input onChange={handleChange} type="text" />
-      <button onClick={handleAddMethod}>Add To Do</button>
-        {
+    <div className='container'>
+      <p>To Do List</p>
+      <div className='todolist'>
+      <div>
+      <input placeholder='Enter To Do' onChange={handleChange} type="text" />
+      <button className='btn btn-primary' onClick={handleAddMethod}>Add To Do</button>
+      </div>
+       <div className='item'>
+       {
          currentList.length>0? currentList.map(({id,task}) => (
-          <div>
+          <div className='todo'>
           <TodoItem task= {task}/>
-          <button onClick={() => deleteHandler(id)}>Delete</button>
+          <button className='btn btn-primary' onClick={() => deleteHandler(id)}>Delete</button>
           </div>
-          
-        )):<h1>Task Yoxdur</h1>
+        )):<div className="alert alert-danger" role="alert">Task Yoxdur</div>
         }
+       </div>
     </div>
+
+    </div>
+    
+    
   );
 };
 
